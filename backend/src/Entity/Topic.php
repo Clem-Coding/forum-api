@@ -6,7 +6,6 @@ use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\Post;
-use ApiPlatform\Metadata\Put;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Delete;
 use App\Repository\TopicRepository;
@@ -21,10 +20,8 @@ use Symfony\Component\Serializer\Attribute\Groups;
         new Get(),
         new GetCollection(),
         new Post(),
-        // new Patch(security: "is_granted('EDIT', object)"),
-        new Patch(),
-        // new Delete(security: "is_granted('EDIT', object)")
-        new Delete()
+        new Patch(security: "is_granted('TOPIC_EDIT', object)"),
+        new Delete(security: "is_granted('TOPIC_DELETE', object)")
     ],
     paginationItemsPerPage: 10,
     normalizationContext: ['groups' => ['topic:read']],
@@ -67,7 +64,7 @@ class Topic
 
 
     #[Groups(['topic:list', 'topic:read', 'topic:write'])]
-    // #[ORM\ManyToOne(inversedBy: 'topics')]
+    #[ORM\ManyToOne(inversedBy: 'topics')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 

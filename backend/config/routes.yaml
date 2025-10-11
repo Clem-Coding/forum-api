@@ -7,3 +7,7 @@ controllers:
 api_login_check:
     path: /api/login_check
     methods: [POST]
+
+api_docs:
+    path: /docs
+    controller: api_platform.action.documentation

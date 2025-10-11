@@ -1,13 +1,17 @@
 # Forum API
 
+## Conception
+
+[Voir le schéma de la base de données sur dbdiagram.io](https://dbdiagram.io/d/Forum-API-68e9428fd2b621e42249a36a)
+
 ## Installation et démarrage
 
 1. Copiez les fichiers d'environnement :
 
-   ```bash
-   cp .env.example .env
-   cp backend/.env.example backend/.env
-   ```
+```bash
+cp .env.example .env
+cp backend/.env.example backend/.env
+```
 
 2. Lancez les conteneurs :
 
@@ -22,6 +26,12 @@
    php bin/console doctrine:fixtures:load --no-interaction
    ```
 
-## Conception
+## Accès aux URLS
 
-[Voir le schéma de la base de données sur dbdiagram.io](https://dbdiagram.io/d/Forum-API-68e9428fd2b621e42249a36a)
+- **Frontend** : [http://localhost:3000](http://localhost:3000)
+
+- **Documentation de l'API** : [http://localhost:8000/docs](http://localhost:8000/docs)
+
+- **Backend API** : [http://localhost:8000](http://localhost:8000)
+
+- **PHPMyAdmin** : [http://localhost:8080/](http://localhost:8080/)

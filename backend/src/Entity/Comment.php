@@ -18,10 +18,8 @@ use Symfony\Component\Serializer\Attribute\Groups;
         new Get(),
         new GetCollection(),
         new Post(),
-        // new Patch(security: "is_granted('EDIT', object)"),
-        new Patch(),
-        // new Delete(security: "is_granted('EDIT', object)")
-        new Delete()
+        new Patch(security: "is_granted('COMMENT_EDIT', object)"),
+        new Delete(security: "is_granted('COMMENT_DELETE', object)")
     ],
     paginationItemsPerPage: 10,
     normalizationContext: ['groups' => ['comment:read']],
@@ -39,7 +37,7 @@ class Comment
     #[ORM\Column]
     private ?int $id = null;
 
-    #[Groups(['topic:read', 'comment:write'])]
+    #[Groups(['topic:read', 'comment:read', 'comment:write'])]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
