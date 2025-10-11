@@ -3,28 +3,53 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\Post;
+use ApiPlatform\Metadata\Put;
+use ApiPlatform\Metadata\Patch;
+use ApiPlatform\Metadata\Delete;
 use App\Repository\TopicRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
-#[ApiResource()]
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection(),
+        new Post(),
+        // new Patch(security: "is_granted('EDIT', object)"),
+        new Patch(),
+        // new Delete(security: "is_granted('EDIT', object)")
+        new Delete()
+    ],
+    paginationItemsPerPage: 10,
+    normalizationContext: ['groups' => ['topic:read']],
+    denormalizationContext: ['groups' => ['topic:write']],
+    order: ['createdAt' => 'DESC']
+)]
 #[ORM\Table(name: "topics")]
+#[ORM\HasLifecycleCallbacks]
 #[ORM\Entity(repositoryClass: TopicRepository::class)]
 class Topic
 {
+    #[Groups(['topic:list', 'topic:read'])]
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
-
+    #[Groups(['topic:list', 'topic:read', 'topic:write'])]
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
+    #[Groups(['topic:read', 'topic:write'])]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
+    #[Groups(['topic:list', 'topic:read'])]
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
@@ -34,9 +59,14 @@ class Topic
     /**
      * @var Collection<int, Comment>
      */
+
+    #[Groups(['topic:read'])]
     #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'topic', orphanRemoval: true)]
+    #[ORM\OrderBy(['createdAt' => 'ASC'])]
     private Collection $comments;
 
+
+    #[Groups(['topic:list', 'topic:read', 'topic:write'])]
     #[ORM\ManyToOne(inversedBy: 'topics')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
@@ -139,5 +169,18 @@ class Topic
         $this->user = $user;
 
         return $this;
+    }
+
+    #[ORM\PrePersist]
+    public function onPrePersist(): void
+    {
+        $this->createdAt = new \DateTimeImmutable();
+        $this->updatedAt = new \DateTimeImmutable();
+    }
+
+    #[ORM\PreUpdate]
+    public function onPreUpdate(): void
+    {
+        $this->updatedAt = new \DateTimeImmutable();
     }
 }

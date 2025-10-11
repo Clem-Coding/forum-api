@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ApiResource()]
 #[ORM\Table(name: "users")]
@@ -21,6 +22,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['topic:read'])]
     #[ORM\Column(length: 180)]
     private ?string $username = null;
 
@@ -36,6 +38,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
+    #[Groups(['topic:read'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $avatarUrl = null;
 
