@@ -1,6 +1,6 @@
 services:
   app:
-    build: .
+    build: ./backend
     container_name: forum_app
     restart: unless-stopped
     ports:

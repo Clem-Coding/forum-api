@@ -3,6 +3,7 @@
 namespace App\Factory;
 
 use App\Entity\User;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Zenstruck\Foundry\Persistence\PersistentObjectFactory;
 
 /**
@@ -15,7 +16,7 @@ final class UserFactory extends PersistentObjectFactory
      *
      * @todo inject services if required
      */
-    public function __construct() {}
+    public function __construct(private UserPasswordHasherInterface $passwordHasher) {}
 
     #[\Override]
     public static function class(): string
@@ -34,7 +35,7 @@ final class UserFactory extends PersistentObjectFactory
         return [
             'createdAt' => \DateTimeImmutable::createFromMutable(self::faker()->dateTimeBetween('-1 year', 'now')),
             'avatarUrl' => null, // sera défini dans les fixtures
-            'password' => 'password',
+            'password' => $this->passwordHasher->hashPassword(new User(), 'password'),
             'roles' => self::faker()->randomElement([[], ['ROLE_ADMIN']]),
             'updatedAt' => \DateTimeImmutable::createFromMutable(self::faker()->dateTimeBetween('-1 year', 'now')),
             'username' => self::faker()->unique()->userName(),
