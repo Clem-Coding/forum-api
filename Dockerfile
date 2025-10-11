@@ -14,6 +14,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-COPY backend/ .
-
+COPY backend/composer.json backend/composer.lock ./
 RUN composer install --no-interaction --optimize-autoloader
+
+COPY backend/ .
