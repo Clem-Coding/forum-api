@@ -67,7 +67,7 @@ class Topic
 
 
     #[Groups(['topic:list', 'topic:read', 'topic:write'])]
-    #[ORM\ManyToOne(inversedBy: 'topics')]
+    // #[ORM\ManyToOne(inversedBy: 'topics')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
@@ -174,8 +174,12 @@ class Topic
     #[ORM\PrePersist]
     public function onPrePersist(): void
     {
-        $this->createdAt = new \DateTimeImmutable();
-        $this->updatedAt = new \DateTimeImmutable();
+        if ($this->createdAt === null) {
+            $this->createdAt = new \DateTimeImmutable();
+        }
+        if ($this->updatedAt === null) {
+            $this->updatedAt = new \DateTimeImmutable();
+        }
     }
 
     #[ORM\PreUpdate]
