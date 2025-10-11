@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#3D2A3D;}
+	.st1{fill:#D5872A;}
+	.st2{fill:#C9E874;}
+	.st3{fill:#277A6B;}
+	.st4{fill:#FFDE69;}
+	.st5{fill:#698250;}
+	.st6{fill:#C8C947;}
+	.st7{fill:#A6DEA9;}
+	.st8{fill:#376C7E;}
+	.st9{fill:#8BA83C;}
+	.st10{fill:#2FABAF;}
+	.st11{fill:#216964;}
+	.st12{fill:#605560;}
+	.st13{fill:#C45742;}
+	.st14{fill:#79D7F2;}
+	.st15{fill:#769938;}
+	.st16{fill:#9EC853;}
+	.st17{fill:#E7AD84;}
+	.st18{fill:#76B079;}
+	.st19{clip-path:url(#SVGID_2_);}
+	.st20{fill:#594335;}
+	.st21{fill:#F7F7F8;}
+	.st22{fill:#7D5737;}
+	.st23{fill:#D68F6A;}
+	.st24{clip-path:url(#SVGID_4_);fill:#C45742;}
+	.st25{clip-path:url(#SVGID_4_);fill:#E88D38;}
+	.st26{clip-path:url(#SVGID_4_);}
+	.st27{fill:#E1902B;}
+	.st28{fill:#FFC671;}
+	.st29{fill:#E1E1E1;}
+	.st30{clip-path:url(#SVGID_6_);}
+	.st31{fill:#D1741D;}
+	.st32{fill:#C93A3A;}
+	.st33{clip-path:url(#SVGID_8_);}
+	.st34{fill:#919191;}
+	.st35{fill:#CE722F;}
+	.st36{fill:#C4C4C4;}
+	.st37{clip-path:url(#SVGID_10_);}
+	.st38{fill:#665348;}
+	.st39{fill:#877365;}
+	.st40{fill:#E3A584;}
+	.st41{fill:#733D28;}
+	.st42{clip-path:url(#SVGID_12_);}
+	.st43{fill:#8C8C8C;}
+	.st44{fill:#BFBFBF;}
+	.st45{clip-path:url(#SVGID_14_);}
+	.st46{clip-path:url(#SVGID_16_);}
+	.st47{fill:#FFFFFF;}
+	.st48{fill:#4A414A;}
+	.st49{clip-path:url(#SVGID_18_);}
+	.st50{fill:#BE7632;}
+	.st51{clip-path:url(#SVGID_20_);}
+	.st52{fill:#E3A445;}
+	.st53{fill:#FFF0BA;}
+	.st54{fill:#BF7128;}
+	.st55{clip-path:url(#XMLID_82_);}
+	.st56{fill:#AC6322;}
+	.st57{clip-path:url(#SVGID_22_);}
+	.st58{fill:#DBCCA6;}
+	.st59{fill:#C2A579;}
+	.st60{fill:#CFB582;}
+	.st61{fill:#EBE2B2;}
+	.st62{fill:#B8B399;}
+	.st63{fill:#918E79;}
+	.st64{fill:#665F52;}
+	.st65{clip-path:url(#XMLID_83_);}
+	.st66{fill:#BD4A4A;}
+	.st67{fill:#D4811C;}
+	.st68{fill:#CF6F15;}
+	.st69{clip-path:url(#SVGID_24_);}
+	.st70{fill:#FFF8E3;}
+	.st71{fill:#7A6D7A;}
+	.st72{fill:#2C1512;}
+	.st73{fill:#D6CBA9;}
+	.st74{clip-path:url(#XMLID_84_);}
+	.st75{fill:#FFEA9E;}
+	.st76{fill:#FFDBC5;}
+	.st77{clip-path:url(#XMLID_85_);}
+	.st78{fill:#B55716;}
+	.st79{fill:#C47325;}
+	.st80{clip-path:url(#XMLID_86_);}
+	.st81{fill:#ADA798;}
+	.st82{fill:#C4BDAC;}
+	.st83{fill:#8F8266;}
+	.st84{fill:#D6CEBC;}
+	.st85{fill:#FFFAE6;}
+	.st86{fill:#595140;}
+	.st87{clip-path:url(#XMLID_88_);}
+	.st88{fill:#B84028;}
+	.st89{fill:#E6B75A;}
+	.st90{fill:#DB614A;}
+	.st91{clip-path:url(#XMLID_92_);}
+	.st92{fill:#615661;}
+	.st93{fill:#635963;}
+	.st94{fill:#4F414F;}
+	.st95{fill:#7D6F7D;}
+	.st96{fill:#B5A0B5;}
+	.st97{fill:#574D57;}
+	.st98{clip-path:url(#XMLID_95_);}
+	.st99{fill:#C2C2C2;}
+	.st100{fill:#9E9E9E;}
+	.st101{fill:#949494;}
+	.st102{fill:#E8E8E8;}
+	.st103{fill:#A1A1A1;}
+	.st104{fill:#D66270;}
+	.st105{clip-path:url(#XMLID_99_);}
+	.st106{fill:#CFCFCF;}
+	.st107{fill:#BDA18D;}
+	.st108{fill:#82A385;}
+	.st109{clip-path:url(#XMLID_100_);}
+	.st110{fill:#D1986E;}
+	.st111{fill:#C2733E;}
+	.st112{fill:#E6AC83;}
+	.st113{fill:#C28155;}
+	.st114{fill:#6E482E;}
+	.st115{fill:#594435;}
+	.st116{clip-path:url(#XMLID_102_);}
+	.st117{fill:#6B5545;}
+	.st118{fill:#261526;}
+	.st119{fill:#9E8776;}
+	.st120{fill:#807180;}
+	.st121{fill:#A693A6;}
+	.st122{fill:#614C61;}
+	.st123{clip-path:url(#XMLID_107_);}
+	.st124{fill:#D9D9D9;}
+	.st125{clip-path:url(#XMLID_110_);}
+	.st126{fill:#4D404D;}
+	.st127{clip-path:url(#XMLID_110_);fill:#4D404D;}
+	.st128{clip-path:url(#XMLID_111_);}
+	.st129{clip-path:url(#XMLID_120_);}
+	.st130{fill:#FFC682;}
+	.st131{clip-path:url(#XMLID_121_);}
+	.st132{fill:#753427;}
+	.st133{clip-path:url(#XMLID_121_);fill:#753427;}
+	.st134{clip-path:url(#SVGID_26_);}
+	.st135{fill:#694334;}
+	.st136{fill:#FF826E;}
+	.st137{fill:#875F44;}
+	.st138{fill:#4F3327;}
+	.st139{fill:#D68256;}
+	.st140{clip-path:url(#SVGID_28_);}
+	.st141{fill:#6E6E6E;}
+	.st142{fill:#B8B8B8;}
+	.st143{clip-path:url(#SVGID_28_);fill:#B8B8B8;}
+	.st144{clip-path:url(#SVGID_30_);}
+	.st145{clip-path:url(#SVGID_32_);}
+	.st146{fill:#D16658;}
+	.st147{fill:#E6786A;}
+	.st148{fill:#F79E92;}
+	.st149{clip-path:url(#SVGID_34_);}
+	.st150{fill:#E6CA56;}
+	.st151{fill:#F2EBCB;}
+	.st152{fill:#F08C7F;}
+	.st153{clip-path:url(#SVGID_36_);}
+	.st154{fill:#9E6842;}
+	.st155{fill:#BA835E;}
+	.st156{fill:#8C5937;}
+	.st157{fill:#E3AD88;}
+	.st158{fill:#A86B42;}
+	.st159{clip-path:url(#SVGID_38_);}
+	.st160{fill:#877987;}
+	.st161{fill:#C7BCB2;}
+	.st162{clip-path:url(#SVGID_40_);}
+	.st163{fill:#6E4D37;}
+	.st164{fill:#A8562A;}
+	.st165{clip-path:url(#SVGID_42_);}
+	.st166{fill:#A37352;}
+	.st167{clip-path:url(#SVGID_44_);}
+	.st168{fill:#8A8A8A;}
+	.st169{fill:#F0F0F0;}
+	.st170{clip-path:url(#XMLID_126_);}
+	.st171{clip-path:url(#SVGID_46_);fill:none;}
+	.st172{clip-path:url(#SVGID_46_);}
+	.st173{fill:#78553C;}
+	.st174{fill:#F29C5E;}
+	.st175{fill:#D4D4D4;}
+	.st176{clip-path:url(#SVGID_48_);}
+	.st177{fill:#DB959A;}
+	.st178{clip-path:url(#SVGID_50_);}
+	.st179{fill:#A1341E;}
+	.st180{fill:#EB9F2E;}
+	.st181{clip-path:url(#SVGID_52_);}
+	.st182{clip-path:url(#SVGID_54_);}
+	.st183{fill:#855433;}
+	.st184{fill:#AD6D42;}
+	.st185{clip-path:url(#SVGID_56_);}
+	.st186{fill:#D5A060;}
+	.st187{clip-path:url(#SVGID_58_);}
+	.st188{fill:#4A3C4A;}
+	.st189{fill:#524352;}
+	.st190{clip-path:url(#SVGID_60_);}
+	.st191{fill:#524252;}
+	.st192{clip-path:url(#SVGID_62_);fill:#C7781C;}
+	.st193{clip-path:url(#SVGID_62_);}
+	.st194{fill:#DEDEDE;}
+	.st195{fill:#C7781C;}
+	.st196{clip-path:url(#SVGID_62_);fill:#D5872A;}
+	.st197{clip-path:url(#SVGID_62_);fill:#877365;}
+	.st198{clip-path:url(#SVGID_62_);fill:#E3AD88;}
+	.st199{clip-path:url(#SVGID_62_);fill:#F7F7F8;}
+	.st200{clip-path:url(#SVGID_64_);}
+	.st201{fill:#A63A25;}
+	.st202{clip-path:url(#SVGID_66_);}
+	.st203{clip-path:url(#SVGID_68_);}
+	.st204{fill:#CF97A1;}
+	.st205{fill:#CF7686;}
+	.st206{clip-path:url(#SVGID_70_);}
+	.st207{fill:#4F464F;}
+	.st208{fill:#9C8A9C;}
+	.st209{clip-path:url(#SVGID_72_);}
+</style>
+<g id="ICON">
+	<path id="XMLID_3058_" class="st7" d="M0,256C0,114.6,114.6,0,256,0c141.4,0,256,114.6,256,256S397.4,512,256,512
+		C114.6,512,0,397.4,0,256z"/>
+</g>
+<g id="Layer_7">
+	<g id="XMLID_1869_">
+		<defs>
+			
+				<ellipse id="SVGID_35_" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -106.0381 256.0002)" cx="256" cy="256" rx="256" ry="256"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_35_"  style="overflow:visible;"/>
+		</clipPath>
+		<g id="XMLID_1870_" class="st19">
+			<polygon id="XMLID_1871_" class="st154" points="322.1,444.7 189.9,444.7 203.8,236.2 306.5,236.2 			"/>
+			<g id="XMLID_1872_">
+				<path id="XMLID_1873_" class="st154" d="M483.7,583.7l-0.1-1c0-62.8-23.5-123.7-52.2-135.3l-122.3-49.3
+					c-28.7-11.6-75.7-11.6-104.4-0.1l-124,49.6c-28.7,11.5-52.2,72.3-52.2,135.1l-0.1,1H483.7z"/>
+				<path id="XMLID_1876_" class="st6" d="M483.6,582.7c0-62.8-23.5-123.7-52.2-135.3l-92.3-37.2c0,0-17.6,63.7-83.1,63.7
+					c-65.5,0-82.7-63.4-82.7-63.4l-92.7,37c-28.7,11.5-52.2,72.3-52.2,135.1l-0.1,1h455.3L483.6,582.7z"/>
+				<g id="XMLID_1877_">
+					<path id="XMLID_1878_" class="st21" d="M172.4,405.9c-12.4,26.7-7.5,56.9,13.6,72.5c21,15.6,51.4,11.5,73.3-8.1
+						c-15.9,1.7-36.1-4.4-54.2-17.8C187.1,439.1,175.4,421.5,172.4,405.9z"/>
+					<path id="XMLID_1879_" class="st21" d="M339.6,405.9c12.4,26.7,7.5,56.9-13.6,72.5c-21,15.6-51.4,11.5-73.3-8.1
+						c15.9,1.7,36.1-4.4,54.2-17.8C324.9,439.1,336.6,421.5,339.6,405.9z"/>
+				</g>
+			</g>
+		</g>
+		<g id="XMLID_1880_" class="st19">
+			<g id="XMLID_1881_">
+				<g id="XMLID_1882_">
+					<g id="XMLID_1883_">
+						<path class="st155" d="M355.4,188c19.2-8.3,34.6-19.1,42.6-29c1.2,2.4,1.2,2,1.8,3.7c9.3,25.5-8,57-38.6,70.6
+							c-30.6,13.7-62.8,4.2-72.1-21.2c-0.8-2.1-0.2-1.2-1.6-6.1l15-6.7C315.9,200.4,335.4,196.6,355.4,188z"/>
+					</g>
+					<g id="XMLID_1884_">
+						<path class="st156" d="M355.1,194.8c13.6-4.5,24.8-10.9,31-17.2c0.6,1.7,0.6,1.4,0.9,2.6c4.4,17.6-9.7,37.9-31.4,45.4
+							c-21.7,7.5-42.7-0.6-47.1-18.3c-0.4-1.5,0-0.8-0.6-4.2l10.6-3.7C327.5,201,341,199.5,355.1,194.8z"/>
+					</g>
+				</g>
+				<g id="XMLID_1885_">
+					<g id="XMLID_1886_">
+						<path class="st155" d="M156.6,188c-19.2-8.3-34.6-19.1-42.6-29c-1.2,2.4-1.2,2-1.8,3.7c-9.3,25.5,8,57,38.6,70.6
+							c30.6,13.7,62.8,4.2,72.1-21.2c0.8-2.1,0.2-1.2,1.6-6.1l-15-6.7C196.1,200.4,176.6,196.6,156.6,188z"/>
+					</g>
+					<g id="XMLID_1887_">
+						<path class="st156" d="M156.9,194.8c-13.6-4.5-24.8-10.9-31-17.2c-0.6,1.7-0.6,1.4-0.9,2.6c-4.4,17.6,9.7,37.9,31.4,45.4
+							c21.7,7.5,42.7-0.6,47.1-18.3c0.4-1.5,0-0.8,0.6-4.2l-10.6-3.7C184.5,201,171,199.5,156.9,194.8z"/>
+					</g>
+				</g>
+			</g>
+			<g id="XMLID_1888_">
+				<g id="XMLID_1889_">
+					<path id="XMLID_1890_" class="st151" d="M306.6,247.3c4.8-25.6,17.6-53.8,37.9-79.8c25.3-32.5,56.8-54.7,85.5-63
+						c-35.9-12.8-90.2,12.7-129.6,63.3c-13,16.7-22.9,34.3-29.7,51.6L306.6,247.3z"/>
+				</g>
+				<g id="XMLID_1891_">
+					<path id="XMLID_1892_" class="st151" d="M205.4,247.3c-4.8-25.6-17.6-53.8-37.9-79.8c-25.3-32.5-56.8-54.7-85.5-63
+						c35.9-12.8,90.2,12.7,129.6,63.3c13,16.7,22.9,34.3,29.7,51.6L205.4,247.3z"/>
+				</g>
+			</g>
+			<g id="XMLID_1893_">
+				<path id="XMLID_1894_" class="st155" d="M333.4,261.2c0,21.4-17.3,38.7-38.7,38.7h-77.4c-21.4,0-38.7-17.3-38.7-38.7v-36.9
+					c0-21.4,17.3-38.7,38.7-38.7h77.4c21.4,0,38.7,17.3,38.7,38.7V261.2z"/>
+			</g>
+			<g id="XMLID_1895_">
+				<path id="XMLID_1896_" class="st155" d="M299.8,363.8c0,28.6-11.2,51.8-43.8,51.8l0,0c-32.6,0-43.6-23.2-43.6-51.8L197,242.9
+					c0-28.6,26.4-51.8,59-51.8l0,0c32.6,0,59,23.2,59,51.8L299.8,363.8z"/>
+			</g>
+			<g id="XMLID_1897_">
+				<path id="XMLID_1898_" class="st157" d="M286.5,389.5c0,16.9-13.7,30.5-30.5,30.5l0,0c-16.9,0-30.5-13.7-30.5-30.5v-61.1
+					c0-16.9,13.7-30.5,30.5-30.5l0,0c16.9,0,30.5,13.7,30.5,30.5V389.5z"/>
+			</g>
+			<g id="XMLID_1899_">
+				<g id="XMLID_1900_">
+					<path id="XMLID_1901_" class="st0" d="M226,267c0,5.8-4.7,10.5-10.5,10.5c-5.8,0-10.5-4.7-10.5-10.5c0-5.8,4.7-10.5,10.5-10.5
+						C221.3,256.5,226,261.2,226,267z"/>
+				</g>
+				<g id="XMLID_1902_">
+					<path id="XMLID_1903_" class="st0" d="M307.2,267c0,5.8-4.7,10.5-10.5,10.5s-10.5-4.7-10.5-10.5c0-5.8,4.7-10.5,10.5-10.5
+						S307.2,261.2,307.2,267z"/>
+				</g>
+			</g>
+			<g id="XMLID_1904_">
+				<path id="XMLID_1905_" class="st157" d="M277.4,322.6c0,8.6-9.6,15.6-21.4,15.6l0,0c-11.8,0-21.4-7-21.4-15.6l-4.4-51.7
+					c0-8.6,14-15.6,25.8-15.6l0,0c11.8,0,25.8,7,25.8,15.6L277.4,322.6z"/>
+			</g>
+			<g id="XMLID_1906_">
+				<g id="XMLID_1907_">
+					<g id="XMLID_1908_">
+						<g id="XMLID_1909_">
+							<path id="XMLID_1910_" class="st158" d="M251.2,342.9c0,3.7,0.9,8.7-1,12c-2.3,4.1-9,2.8-12.8,2.8c-5.5,0-5.5,8.6,0,8.6
+								c6.8,0,13.2,0.5,18.4-4.7c5-5,4-12.3,4-18.7C259.8,337.3,251.2,337.3,251.2,342.9L251.2,342.9z"/>
+						</g>
+					</g>
+					<g id="XMLID_1911_">
+						<g id="XMLID_1912_">
+							<path id="XMLID_1913_" class="st158" d="M252.2,342.9c0,6.2-0.9,12.9,3.4,18c5,6,12,5.4,19,5.4c5.5,0,5.5-8.6,0-8.6
+								c-4.1,0-9.2,1-12.4-2.2c-2.7-2.7-1.5-9.2-1.5-12.6C260.8,337.3,252.2,337.3,252.2,342.9L252.2,342.9z"/>
+						</g>
+					</g>
+				</g>
+				<g id="XMLID_1914_">
+					<g id="XMLID_1915_">
+						<path class="st156" d="M250.9,333c4.5,5.7,5.5,12.1,2.3,14.5c-3.2,2.3-9.5-0.3-14-6c-4.5-5.7-5.5-12.2-2.3-14.5
+							C240.2,324.7,246.4,327.3,250.9,333z"/>
+					</g>
+					<g id="XMLID_1916_">
+						<path class="st156" d="M261.1,333c-4.5,5.7-5.5,12.1-2.3,14.5c3.2,2.3,9.5-0.3,14-6c4.5-5.7,5.5-12.2,2.3-14.5
+							C271.8,324.7,265.6,327.3,261.1,333z"/>
+					</g>
+				</g>
+			</g>
+			<g id="XMLID_1917_">
+				<g id="XMLID_1918_">
+					<path id="XMLID_1919_" class="st13" d="M273.1,374.1c0,7.3-7.6,13.2-17.1,13.2c-9.4,0-17.1-5.9-17.1-13.2
+						c0-7.3,7.6-13.2,17.1-13.2C265.4,360.8,273.1,366.8,273.1,374.1z"/>
+				</g>
+				<g id="XMLID_1920_">
+					<path id="XMLID_1921_" class="st13" d="M281.6,387.3c0,9.4-11.5,17.1-25.6,17.1c-14.2,0-25.6-7.6-25.6-17.1
+						c0-9.4,11.5-17.1,25.6-17.1C270.2,370.2,281.6,377.9,281.6,387.3z"/>
+				</g>
+				<g id="XMLID_1922_">
+					<g id="XMLID_1923_">
+						<path id="XMLID_1924_" class="st21" d="M273.7,368.8c-9.5,9-25.9,9-35.5,0c-6.7-6.3-16.9,3.8-10.1,10.1
+							c15.3,14.4,40.4,14.4,55.8,0C290.6,372.6,280.5,362.5,273.7,368.8L273.7,368.8z"/>
+					</g>
+				</g>
+			</g>
+			<g id="XMLID_1925_">
+				<g id="XMLID_1926_">
+					<g id="XMLID_1927_">
+						<path id="XMLID_1928_" class="st12" d="M210,303.5c-18.9,0-34.2-15.3-34.2-34.2s15.3-34.2,34.2-34.2
+							c18.9,0,34.2,15.3,34.2,34.2S228.9,303.5,210,303.5z M210,241.9c-15.1,0-27.5,12.3-27.5,27.5s12.3,27.5,27.5,27.5
+							c15.1,0,27.5-12.3,27.5-27.5S225.2,241.9,210,241.9z"/>
+					</g>
+					<g id="XMLID_1931_">
+						<path id="XMLID_1932_" class="st12" d="M302,303.5c-18.8,0-34.2-15.3-34.2-34.2s15.3-34.2,34.2-34.2
+							c18.9,0,34.2,15.3,34.2,34.2S320.8,303.5,302,303.5z M302,241.9c-15.1,0-27.5,12.3-27.5,27.5s12.3,27.5,27.5,27.5
+							c15.1,0,27.5-12.3,27.5-27.5S317.1,241.9,302,241.9z"/>
+					</g>
+				</g>
+				<g id="XMLID_1935_">
+					<rect id="XMLID_1936_" x="240.3" y="263.6" class="st12" width="31.4" height="7"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
