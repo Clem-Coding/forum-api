@@ -22,3 +22,13 @@ services:
     App\State\UserPasswordHasher:
         bind:
             $processor: "@api_platform.doctrine.orm.state.persist_processor"
+
+    App\State\TopicPersister:
+        arguments:
+            - "@api_platform.doctrine.orm.state.persist_processor"
+            - "@security.helper"
+
+    App\State\CommentPersister:
+        arguments:
+            - "@api_platform.doctrine.orm.state.persist_processor"
+            - "@security.helper"

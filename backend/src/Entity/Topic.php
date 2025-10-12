@@ -9,6 +9,7 @@ use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Delete;
 use App\Repository\TopicRepository;
+use App\State\TopicPersister;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -20,8 +21,8 @@ use Symfony\Component\Validator\Constraints as Assert;
     operations: [
         new Get(),
         new GetCollection(),
-        new Post(),
-        new Patch(security: "is_granted('TOPIC_EDIT', object)"),
+        new Post(processor: TopicPersister::class),
+        new Patch(security: "is_granted('TOPIC_EDIT', object)", processor: TopicPersister::class),
         new Delete(security: "is_granted('TOPIC_DELETE', object)")
     ],
     paginationItemsPerPage: 10,
