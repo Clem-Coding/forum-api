@@ -14,6 +14,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Attribute\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ApiResource(
     operations: [
@@ -38,11 +39,24 @@ class Topic
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+
     #[Groups(['topic:list', 'topic:read', 'topic:write'])]
+    #[Assert\NotBlank(message: "Le titre ne peut pas être vide")]
+    #[Assert\Length(
+        min: 5,
+        max: 150,
+        minMessage: "Le titre doit contenir au moins {{ limit }} caractère",
+        maxMessage: "Le titre ne peut pas dépasser {{ limit }} caractères"
+    )]
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
     #[Groups(['topic:read', 'topic:write'])]
+    #[Assert\NotBlank(message: "Le contenu ne peut pas être vide")]
+    #[Assert\Length(
+        min: 10,
+        minMessage: "Le contenu doit contenir au moins {{ limit }} caractères"
+    )]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 

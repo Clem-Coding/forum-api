@@ -12,6 +12,7 @@ use App\Repository\CommentRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Attribute\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ApiResource(
     operations: [
@@ -38,6 +39,7 @@ class Comment
     private ?int $id = null;
 
     #[Groups(['topic:read', 'comment:read', 'comment:write'])]
+    #[Assert\NotBlank(message: "Le contenu ne peut pas être vide")]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
