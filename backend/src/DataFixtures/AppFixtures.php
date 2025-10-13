@@ -20,7 +20,7 @@ class AppFixtures extends Fixture
             ]);
         }
 
-        $topics = TopicFactory::createMany(15, function () use ($users) {
+        $topics = TopicFactory::createMany(40, function () use ($users) {
             return [
                 'user' => $users[array_rand($users)]
             ];

@@ -83,7 +83,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     )]
     private ?string $plainPassword = null;
 
-    #[Groups(['topic:read'])]
+    #[Groups(['topic:read', 'user:read'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $avatarUrl = null;
 
