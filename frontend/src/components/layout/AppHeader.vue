@@ -14,7 +14,7 @@
             :alt="`Avatar de ${currentUser.username}`"
             class="avatar"
           />
-          <strong v-if="currentUser">{{ currentUser.username }}</strong>
+          <span v-if="currentUser">{{ currentUser.username }}</span>
         </div>
         <button
           @click="handleLogout"
@@ -52,10 +52,13 @@ const handleLogout = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 h1 {
   cursor: pointer;
+  margin: 0;
 }
 
 .auth-section {
@@ -77,6 +80,11 @@ h1 {
   gap: 1em;
 }
 
+.user-container span {
+  display: flex;
+  align-items: center;
+}
+
 .avatar {
   width: 40px;
   height: 40px;
@@ -92,15 +100,33 @@ h1 {
   transition: color 0.2s;
 }
 
+.btn-logout {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btn-logout svg {
+  width: 1.5em;
+  height: 1.5em;
+}
+
 .btn-login:hover,
 .btn-logout:hover {
   color: var(--vt-c-lime);
 }
 
 @media (min-width: 1024px) {
+  .header {
+  }
   .user-info {
     flex-direction: row;
     align-items: center;
+  }
+
+  .btn-logout {
+    justify-content: center;
   }
 }
 </style>

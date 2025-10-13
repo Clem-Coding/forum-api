@@ -1,48 +1,45 @@
 <template>
-  <section>
-    <h2>Les derniers topics</h2>
-    <ul class="topics-list">
-      <li v-for="topic in topics" :key="topic.id" class="forum-topic">
-        <div class="forum-avatar">
-          <img
-            :src="`${API_BASE_URL}${topic.user.avatarUrl}`"
-            :alt="`Avatar de ${topic.user.username}`"
-          />
+  <ul class="topics-list">
+    <li v-for="topic in topics" :key="topic.id" class="forum-topic">
+      <div class="forum-avatar">
+        <img
+          :src="`${API_BASE_URL}${topic.user.avatarUrl}`"
+          :alt="`Avatar de ${topic.user.username}`"
+        />
+      </div>
+      <div class="forum-topic__body">
+        <router-link :to="`/topic/${topic.id}`" class="topic-title">
+          {{ topic.title }}
+        </router-link>
+        <div class="forum-topic__meta">
+          {{ topic.user.username }} le
+          {{ new Date(topic.createdAt).toLocaleDateString() }}
         </div>
-        <div class="forum-topic__body">
-          <router-link :to="`/topic/${topic.id}`" class="topic-title">
-            {{ topic.title }}
-          </router-link>
-          <div class="forum-topic__meta">
-            {{ topic.user.username }} le
-            {{ new Date(topic.createdAt).toLocaleDateString() }}
-          </div>
-        </div>
-      </li>
-    </ul>
-    <div class="pagination">
-      <button @click="goToPage(currentPage - 1)" :disabled="currentPage === 1" class="nav-btn">
-        <PhCaretDoubleLeft />
-      </button>
+      </div>
+    </li>
+  </ul>
+  <nav class="pagination">
+    <button @click="goToPage(currentPage - 1)" :disabled="currentPage === 1" class="nav-btn">
+      <PhCaretDoubleLeft />
+    </button>
 
-      <button
-        v-for="page in totalPages"
-        :key="page"
-        @click="goToPage(page)"
-        :class="{ active: currentPage === page }"
-      >
-        {{ page }}
-      </button>
+    <button
+      v-for="page in totalPages"
+      :key="page"
+      @click="goToPage(page)"
+      :class="{ active: currentPage === page }"
+    >
+      {{ page }}
+    </button>
 
-      <button
-        @click="goToPage(currentPage + 1)"
-        :disabled="currentPage === totalPages"
-        class="nav-btn"
-      >
-        <PhCaretDoubleRight />
-      </button>
-    </div>
-  </section>
+    <button
+      @click="goToPage(currentPage + 1)"
+      :disabled="currentPage === totalPages"
+      class="nav-btn"
+    >
+      <PhCaretDoubleRight />
+    </button>
+  </nav>
 </template>
 
 <script setup lang="ts">
@@ -121,6 +118,7 @@ const goToPage = (page: number) => {
   background: var(--vt-c-dark-midnight-muted);
   border-radius: 2px;
   transition: all 0.2s ease;
+  width: fit-content;
 }
 
 .pagination button:hover:not(:disabled) {

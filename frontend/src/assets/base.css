@@ -6,22 +6,14 @@
   --vt-c-dark-midnight-muted: #2c2e63;
   --vt-c-light-blue: #ebf1ff;
   --vt-c-lime: #c9e874;
+  --vt-c-lime-hover: #cfff33;
   --vt-c-grey-velvet: #6e6d7a;
   --vt-c-light-grey: #b5b4bb;
   --vt-c-white: #ffffff;
   --vt-c-black: #000000;
-  --vt-c-light-indigo: #506ce7;
-
-  /*
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64); */
+  --vt-c-light-indigo: #667eea;
+  --vt-c-red: #e74c3c;
+  --vt-c-red-hover: #de2f1b;
 }
 
 /* semantic color variables for this project */
@@ -55,7 +47,6 @@ body {
   color: var(--color-text);
 }
 
-/* Forcer l'héritage des polices pour tous les éléments de formulaire */
 button,
 input,
 textarea,
@@ -79,6 +70,10 @@ a {
   color: inherit;
 }
 
+ul {
+  list-style: none;
+}
+
 button {
   background: none;
   border: none;
@@ -88,4 +83,16 @@ button {
   color: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

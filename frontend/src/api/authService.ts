@@ -42,4 +42,12 @@ export const authService = {
     const currentUser = this.getCurrentUser();
     return currentUser ? currentUser.username === resourceUser.username : false;
   },
+
+  isAdmin(resourceUser: User): boolean {
+    const currentUser = this.getCurrentUser();
+    return currentUser
+      ? (currentUser.roles?.includes("ROLE_ADMIN") ?? false) ||
+          currentUser.username === resourceUser.username
+      : false;
+  },
 };

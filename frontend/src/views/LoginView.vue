@@ -1,8 +1,7 @@
 <template>
-  <section class="login-container">
-    <div class="login-card">
+  <section class="card-container">
+    <div class="card">
       <h2>Connexion</h2>
-
       <form @submit.prevent="handleLogin">
         <div class="form-group">
           <label for="username">Nom d'utilisateur</label>
@@ -80,25 +79,6 @@ const handleLogin = async () => {
 </script>
 
 <style scoped>
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.login-card {
-  background: white;
-  padding: 1.5em;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  max-width: 450px;
-  animation: slideUp 0.5s ease;
-}
-
-h2 {
-  color: var(--color-text-on-light);
-}
-
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -117,33 +97,6 @@ h2 {
   font-size: 1rem;
 }
 
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: var(--vt-c-grey-velvet);
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-input {
-  width: 100%;
-  padding: 0.875rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-input:focus {
-  outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
-
 input:disabled {
   background: #f5f5f5;
   cursor: not-allowed;
@@ -159,33 +112,6 @@ input:disabled {
   border-left: 4px solid #c33;
 }
 
-.btn-primary {
-  width: 100%;
-  padding: 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-}
-
-.btn-primary:active:not(:disabled) {
-  transform: translateY(0);
-}
-
-.btn-primary:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-}
 
 .divider {
   position: relative;
