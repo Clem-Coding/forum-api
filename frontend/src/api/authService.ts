@@ -14,11 +14,9 @@ export const authService = {
       params: { username: decoded.username },
     });
 
-    const user = userResponse.data.member[0]; // ← ICI le changement !
+    const user = userResponse.data.member[0];
 
-    if (!user) {
-      throw new Error("Utilisateur non trouvé");
-    }
+    if (!user) throw new Error("Utilisateur non trouvé");
 
     localStorage.setItem("auth_token", token);
     localStorage.setItem("current_user", JSON.stringify(user));
@@ -40,21 +38,8 @@ export const authService = {
     return localStorage.getItem("auth_token");
   },
 
-  isAuthenticated(): boolean {
-    const token = this.getToken();
-    if (!token) return false;
-
-    try {
-      const decoded = jwtDecode<JwtPayload>(token);
-      return decoded.exp * 1000 > Date.now();
-    } catch {
-      return false;
-    }
-  },
-
   isOwner(resourceUser: User): boolean {
     const currentUser = this.getCurrentUser();
-    if (!currentUser) return false;
-    return currentUser.username === resourceUser.username;
+    return currentUser ? currentUser.username === resourceUser.username : false;
   },
 };

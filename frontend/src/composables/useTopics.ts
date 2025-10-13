@@ -1,5 +1,5 @@
 import { ref } from "vue";
-import { topicsService } from "../api/topics";
+import { topicsService } from "../api/topicService";
 import type { Topic, TopicCreate, TopicUpdate } from "../types/topic";
 
 export function useTopics() {
@@ -64,13 +64,11 @@ export function useTopics() {
     try {
       const updatedTopic = await topicsService.update(id, data);
 
-      // Update in the list
       const index = topics.value.findIndex((t) => t.id === id);
       if (index !== -1) {
         topics.value[index] = updatedTopic;
       }
 
-      // Update current topic
       if (currentTopic.value?.id === id) {
         currentTopic.value = updatedTopic;
       }
@@ -90,7 +88,6 @@ export function useTopics() {
     try {
       await topicsService.delete(id);
 
-      // Remove from the list
       topics.value = topics.value.filter((t) => t.id !== id);
 
       // Reset current topic if it's the one being deleted

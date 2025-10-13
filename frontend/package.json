@@ -16,6 +16,7 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
+    "@phosphor-icons/vue": "^2.2.1",
     "axios": "^1.12.2",
     "jwt-decode": "^4.0.0",
     "pinia": "^3.0.3",

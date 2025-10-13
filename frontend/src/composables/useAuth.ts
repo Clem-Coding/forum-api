@@ -1,46 +1,22 @@
-import { ref, computed } from "vue";
-import { authService } from "../api/auth";
-import type { User } from "../types/user";
-import type { LoginCredentials } from "../types/auth";
+import { ref } from "vue";
+import type { User, LoginCredentials } from "../types/user";
+import { authService } from "../api/authService";
 
-const currentUser = ref<User | null>(authService.getCurrentUser());
-const isAuthenticated = computed(() => authService.isAuthenticated());
+export const isAuthenticated = ref(!!authService.getToken());
+export const currentUser = ref<User | null>(authService.getCurrentUser());
 
-export function useAuth() {
-  const loading = ref(false);
-  const error = ref<string | null>(null);
-
+export const useAuth = () => {
   const login = async (credentials: LoginCredentials) => {
-    loading.value = true;
-    error.value = null;
-    try {
-      const result = await authService.login(credentials);
-      currentUser.value = result.user;
-      return result;
-    } catch (e: any) {
-      error.value = e.response?.data?.message || "Erreur de connexion";
-      throw e;
-    } finally {
-      loading.value = false;
-    }
+    const { user } = await authService.login(credentials);
+    currentUser.value = user;
+    isAuthenticated.value = true;
   };
 
   const logout = () => {
     authService.logout();
     currentUser.value = null;
+    isAuthenticated.value = false;
   };
 
-  const isOwner = (resourceUser: User): boolean => {
-    return authService.isOwner(resourceUser);
-  };
-
-  return {
-    currentUser,
-    isAuthenticated,
-    loading,
-    error,
-    login,
-    logout,
-    isOwner,
-  };
-}
+  return { login, logout, isAuthenticated, currentUser };
+};

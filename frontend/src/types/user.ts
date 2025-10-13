@@ -1,14 +1,12 @@
 export interface User {
-  '@id': string;
-  '@type': string;
+  "@id": string;
+  "@type": string;
   id?: number;
   username: string;
-  email?: string;
   avatarUrl?: string;
 }
 
-export interface UserCreate {
+export interface LoginCredentials {
   username: string;
-  email: string;
   password: string;
 }
