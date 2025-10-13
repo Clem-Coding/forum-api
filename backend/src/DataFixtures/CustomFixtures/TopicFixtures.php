@@ -25,8 +25,11 @@ class TopicFixtures extends Fixture implements DependentFixtureInterface
                 "Quels scénarios géopolitiques pourraient émerger dans les 5 prochaines années ?"
         );
         $topic->setUser($user);
-        $topic->setCreatedAt(new \DateTimeImmutable());
-        $topic->setUpdatedAt(new \DateTimeImmutable());
+        $now = new \DateTimeImmutable();
+        // Create a date 1 day before now to be sure the topic is older than the comments when testing
+        $minus1d = $now->sub(new \DateInterval('P1D'));
+        $topic->setCreatedAt($minus1d);
+        $topic->setUpdatedAt($minus1d);
 
         $manager->persist($topic);
         $manager->flush();

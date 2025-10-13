@@ -38,6 +38,12 @@ class UserFixtures extends Fixture
                 'avatarUrl' => '/assets/avatars/avatar-ladymeadow.svg',
                 'reference' => 'user-ladymeadow',
             ],
+            [
+                'username' => 'Ch33kPouch47',
+                'roles' => [],
+                'avatarUrl' => '/assets/avatars/avatar-ch33kpouch47.svg',
+                'reference' => 'user-ch33kpouch47',
+            ],
         ];
 
         foreach ($usersData as $data) {

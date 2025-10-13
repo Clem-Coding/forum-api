@@ -16,10 +16,19 @@
           {{ new Date(topic.createdAt).toLocaleDateString() }}
         </div>
       </div>
+      <div class="forum-topic__stats">
+        <PhChatsCircle :size="24" />
+        <span class="comments-count">{{ topic.comments?.length || 0 }}</span>
+      </div>
     </li>
   </ul>
   <nav class="pagination">
-    <button @click="goToPage(currentPage - 1)" :disabled="currentPage === 1" class="nav-btn">
+    <button
+      @click="goToPage(currentPage - 1)"
+      :disabled="currentPage === 1"
+      class="nav-btn"
+      aria-label="Page précédente"
+    >
       <PhCaretDoubleLeft />
     </button>
 
@@ -36,6 +45,7 @@
       @click="goToPage(currentPage + 1)"
       :disabled="currentPage === totalPages"
       class="nav-btn"
+      aria-label="Page suivante"
     >
       <PhCaretDoubleRight />
     </button>
@@ -46,7 +56,7 @@
 import { onMounted, ref, computed } from "vue";
 import { useTopics } from "../composables/useTopics";
 import { API_BASE_URL } from "../api/client";
-import { PhCaretDoubleLeft, PhCaretDoubleRight } from "@phosphor-icons/vue";
+import { PhCaretDoubleLeft, PhCaretDoubleRight, PhChatsCircle } from "@phosphor-icons/vue";
 
 const { topics, totalItems, fetchTopics } = useTopics();
 const currentPage = ref(1);
@@ -97,6 +107,19 @@ const goToPage = (page: number) => {
 .forum-topic__body {
   flex: 1;
   margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.forum-topic__stats {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--vt-c-light-grey);
+  font-size: 0.9rem;
+}
+
+.comments-count {
+  font-weight: 500;
 }
 
 .forum-topic__meta {

@@ -9,6 +9,7 @@ use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Delete;
 use App\Repository\CommentRepository;
+use App\State\CommentPersister;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Attribute\Groups;
@@ -18,8 +19,11 @@ use Symfony\Component\Validator\Constraints as Assert;
     operations: [
         new Get(),
         new GetCollection(),
-        new Post(),
-        new Patch(security: "is_granted('COMMENT_EDIT', object)"),
+        new Post(processor: CommentPersister::class),
+        new Patch(
+            security: "is_granted('COMMENT_EDIT', object)",
+            processor: CommentPersister::class
+        ),
         new Delete(security: "is_granted('COMMENT_DELETE', object)")
     ],
     paginationItemsPerPage: 10,
@@ -32,7 +36,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: CommentRepository::class)]
 class Comment
 {
-    #[Groups(['comment:read'])]
+    #[Groups(['comment:read', 'topic:read'])]
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]

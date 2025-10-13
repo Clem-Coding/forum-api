@@ -22,7 +22,6 @@
   width: 100%;
   gap: 1.5rem;
   width: fit-content;
-  min-width: 500px;
 }
 
 .card h2,
@@ -141,5 +140,9 @@ Media Queries
   .container {
     max-width: 1200px;
     padding: 0;
+  }
+
+  .card {
+    min-width: 600px;
   }
 }
