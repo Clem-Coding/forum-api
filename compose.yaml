@@ -1,4 +1,7 @@
+version: "3.9"
+
 services:
+  # Symfony / PHP backend
   app:
     build: ./backend
     container_name: forum_app
@@ -7,7 +10,11 @@ services:
       - "8000:8000"
     volumes:
       - ./backend:/var/www/html:cached
+
+      # Persist PHP dependencies installed by Composer so they are not reinstalled on container rebuild
       - backend_vendor:/var/www/html/vendor
+
+      # Persist Symfony cache and logs to avoid regeneration on container restarts
       - backend_var:/var/www/html/var
     depends_on:
       - db
@@ -17,6 +24,7 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
 
+  # MariaDB
   db:
     image: mariadb:11
     container_name: forum_db
@@ -31,6 +39,7 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
+  # PhpMyAdmin
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: forum_pma
@@ -44,6 +53,21 @@ services:
       - "8080:80"
     depends_on:
       - db
+
+  # Vue.js frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: forum_frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app:cached
+      - /app/node_modules
+    depends_on:
+      - app
+    command: npm run dev
 
 volumes:
   db_data:
