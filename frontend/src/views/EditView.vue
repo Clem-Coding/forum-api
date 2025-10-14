@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-import EditForm from "@/components/forms/EditForm.vue";
+import EditForm from "@/components/forms/EditTopicForm.vue";
 </script>

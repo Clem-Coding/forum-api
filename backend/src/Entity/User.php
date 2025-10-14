@@ -50,7 +50,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
-    #[Groups(['topic:read', 'user:read', 'user:create', 'user:update'])]
+    #[Groups(['topic:read', 'user:read', 'user:create', 'user:update', 'comment:read'])]
     #[Assert\NotBlank(message: "Le nom d'utilisateur est obligatoire")]
     #[Assert\Length(
         min: 3,
@@ -91,7 +91,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     )]
     private ?string $plainPassword = null;
 
-    #[Groups(['topic:read', 'user:read'])]
+    #[Groups(['topic:read', 'user:read', 'comment:read'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $avatarUrl = null;
 

@@ -1,6 +1,6 @@
 import { ref } from "vue";
-import { topicsService } from "../api/topicService";
-import type { Topic, TopicCreate, TopicUpdate } from "../types/topic";
+import { topicsService } from "@/api/topicService";
+import type { Topic, TopicCreate, TopicUpdate } from "@/types/topic";
 
 export function useTopics() {
   const topics = ref<Topic[]>([]);
@@ -42,15 +42,19 @@ export function useTopics() {
   };
 
   // Create a new topic
-  const createTopic = async (data: TopicCreate) => {
+  const createTopic = async (
+    data: TopicCreate
+  ): Promise<{ success: true; topic: Topic } | { success: false; errors: any }> => {
     loading.value = true;
     error.value = null;
     try {
       const newTopic = await topicsService.create(data);
-      topics.value.unshift(newTopic); // Add to the top of the list
-      return newTopic;
+      topics.value.unshift(newTopic);
+      return { success: true, topic: newTopic };
     } catch (e: any) {
-      error.value = e.response?.data?.message || "Erreur lors de la création";
+      if (e.response && (e.response.status === 400 || e.response.status === 422)) {
+        return { success: false, errors: e.response.data.violations };
+      }
       throw e;
     } finally {
       loading.value = false;
@@ -58,7 +62,10 @@ export function useTopics() {
   };
 
   // Update a topic
-  const updateTopic = async (id: number, data: TopicUpdate) => {
+  const updateTopic = async (
+    id: number,
+    data: TopicUpdate
+  ): Promise<{ success: true; topic: Topic } | { success: false; errors: any }> => {
     loading.value = true;
     error.value = null;
     try {
@@ -72,8 +79,11 @@ export function useTopics() {
       if (currentTopic.value?.id === id) {
         currentTopic.value = updatedTopic;
       }
-      return updatedTopic;
+      return { success: true, topic: updatedTopic };
     } catch (e: any) {
+      if (e.response && (e.response.status === 400 || e.response.status === 422)) {
+        return { success: false, errors: e.response.data.violations };
+      }
       error.value = e.response?.data?.message || "Erreur lors de la modification";
       throw e;
     } finally {

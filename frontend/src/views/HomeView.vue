@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import { PhPencilSimple } from "@phosphor-icons/vue";
-import TopicList from "../components/TopicList.vue";
+import TopicList from "@/components/TopicList.vue";
 import { isAuthenticated } from "@/composables/useAuth";
 </script>
 

@@ -12,6 +12,7 @@
             placeholder="Entrez le titre du topic"
             required
           />
+          <p v-if="errors.title" class="error-msg">{{ errors.title[0] }}</p>
         </div>
 
         <div class="form-group">
@@ -23,6 +24,7 @@
             rows="6"
             required
           ></textarea>
+          <p v-if="errors.content" class="error-msg">{{ errors.content[0] }}</p>
         </div>
 
         <button type="submit" class="btn-primary">Publier</button>
@@ -33,17 +35,30 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { useRouter } from "vue-router";
 import { useTopics } from "@/composables/useTopics";
+import { useFormErrors } from "@/composables/useErrors";
+import { useRouter } from "vue-router";
 
 const title = ref("");
 const content = ref("");
 const router = useRouter();
-
-const { createTopic } = useTopics();
+const { errors, setErrors } = useFormErrors();
+const { createTopic, topics } = useTopics();
 
 const submitForm = async () => {
-  await createTopic({ title: title.value, content: content.value });
-  await router.push("/");
+  setErrors([]); // reset errors
+  const result = await createTopic({ title: title.value, content: content.value });
+
+  if (result.success) {
+    if (topics && Array.isArray(topics.value)) {
+      topics.value.unshift(result.topic);
+    }
+
+    title.value = "";
+    content.value = "";
+    router.push("/");
+  } else {
+    setErrors(result.errors);
+  }
 };
 </script>

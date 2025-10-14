@@ -15,7 +15,7 @@
   align-items: center;
 }
 .card {
-  background: white;
+  background: var(--vt-c-white);
   padding: 3em;
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -73,8 +73,15 @@ input:focus {
 
 textarea {
   width: 100%;
+  caret-color: var(--vt-c-light-indigo);
+  padding: 1em;
 }
 
+textarea:focus {
+  outline: none;
+  border: 2px solid var(--vt-c-light-indigo);
+  border-radius: 4px;
+}
 /* ==========================================================================
 Buttons
   ========================================================================== */
@@ -89,10 +96,6 @@ button {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   font-size: 1rem;
-}
-
-.btn-primary:hover:not(:disabled) {
-  transform: translateY(-2px);
 }
 
 .btn-primary:active:not(:disabled) {
@@ -110,19 +113,24 @@ button {
   color: var(--vt-c-light-indigo);
 }
 
-.btn-secondary:hover:not(:disabled) {
-  background: var(--vt-c-light-indigo);
-  color: white;
-  transform: translateY(-2px);
-}
-
 .btn-danger {
   background: var(--vt-c-red);
   color: white;
 }
 
+.btn-primary:hover:not(:disabled),
+.btn-secondary:hover:not(:disabled),
 .btn-danger:hover {
-  background: var(--vt-c-red-hover);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+Various
+  ========================================================================== */
+
+.error-msg {
+  color: var(--vt-c-red);
+  font-size: 0.9rem;
 }
 /* ==========================================================================
 Media Queries

@@ -27,7 +27,7 @@
           />
         </div>
 
-        <div v-if="error" class="error-message">{{ error }}</div>
+        <p v-if="error" class="error-msg">{{ error }}</p>
 
         <button type="submit" class="btn-primary" :disabled="loading">
           {{ loading ? "Connexion..." : "Se connecter" }}
@@ -49,7 +49,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { useAuth } from "../composables/useAuth";
+import { useAuth } from "@/composables/useAuth";
 
 const router = useRouter();
 const { login } = useAuth();
@@ -102,17 +102,6 @@ input:disabled {
   cursor: not-allowed;
 }
 
-.error-message {
-  background: #fee;
-  color: #c33;
-  padding: 0.875rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  border-left: 4px solid #c33;
-}
-
-
 .divider {
   position: relative;
   text-align: center;
@@ -139,7 +128,7 @@ input:disabled {
 
 .register-link {
   text-align: center;
-  color: #666;
+  color: var(--vt-c-grey-velvet);
   font-size: 0.95rem;
 }
 

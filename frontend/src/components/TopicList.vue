@@ -54,8 +54,8 @@
 
 <script setup lang="ts">
 import { onMounted, ref, computed } from "vue";
-import { useTopics } from "../composables/useTopics";
-import { API_BASE_URL } from "../api/client";
+import { useTopics } from "@/composables/useTopics";
+import { API_BASE_URL } from "@/api/client";
 import { PhCaretDoubleLeft, PhCaretDoubleRight, PhChatsCircle } from "@phosphor-icons/vue";
 
 const { topics, totalItems, fetchTopics } = useTopics();
@@ -63,7 +63,7 @@ const currentPage = ref(1);
 
 const totalPages = computed(() => {
   if (!totalItems.value || totalItems.value === 0) return 1;
-  return Math.ceil(totalItems.value / 10); // 10 = paginationItemsPerPage from the API (put in a constant woul)
+  return Math.ceil(totalItems.value / 10); // 10 = paginationItemsPerPage from the API
 });
 
 onMounted(() => {

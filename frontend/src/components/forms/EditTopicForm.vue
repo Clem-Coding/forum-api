@@ -16,6 +16,7 @@
             placeholder="Entrez le titre du topic"
             required
           />
+          <p v-if="errors.title" class="error-msg">{{ errors.title[0] }}</p>
         </div>
 
         <div class="form-group">
@@ -27,6 +28,7 @@
             rows="6"
             required
           ></textarea>
+          <p v-if="errors.content" class="error-msg">{{ errors.content[0] }}</p>
         </div>
 
         <button type="submit" class="btn-primary">Modifier</button>
@@ -39,9 +41,11 @@
 import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useTopics } from "@/composables/useTopics";
+import { useFormErrors } from "@/composables/useFormErrors";
 
 const { fetchTopicById } = useTopics();
 const route = useRoute();
+const { errors, setErrors } = useFormErrors();
 
 const title = ref("");
 const content = ref("");
@@ -77,16 +81,13 @@ const router = useRouter();
 const { updateTopic } = useTopics();
 
 const submitForm = async () => {
-  if (!topicId) return;
-  loading.value = true;
-  error.value = null;
-  try {
-    await updateTopic(Number(topicId), { title: title.value, content: content.value });
+  setErrors([]); // reset errors
+  const result = await updateTopic(Number(topicId), { title: title.value, content: content.value });
+
+  if (result.success) {
     await router.push(`/topic/${topicId}`);
-  } catch (e: any) {
-    error.value = e.response?.data?.message || "Erreur lors de la modification";
-  } finally {
-    loading.value = false;
+  } else {
+    setErrors(result.errors);
   }
 };
 </script>

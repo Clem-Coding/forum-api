@@ -46,7 +46,7 @@ class Topic
     #[Assert\Length(
         min: 5,
         max: 150,
-        minMessage: "Le titre doit contenir au moins {{ limit }} caractère",
+        minMessage: "Le titre doit contenir au moins {{ limit }} caractères",
         maxMessage: "Le titre ne peut pas dépasser {{ limit }} caractères"
     )]
     #[ORM\Column(length: 255)]

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
 
-/* color palette from <https://github.com/vuejs/theme> */
+/* color palette */
 :root {
   --vt-c-dark-midnight: #171933;
   --vt-c-dark-midnight-muted: #2c2e63;
@@ -19,19 +19,15 @@
 /* semantic color variables for this project */
 :root {
   --color-background: var(--vt-c-dark-midnight);
-  /* --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute); */
-
   --color-border: var(--vt-c-divider-light-2);
   --color-border-hover: var(--vt-c-divider-light-1);
-
-  /* --color-heading: var(--vt-c-text-light-1); */
   --color-text: var(--vt-c-light-blue);
   --color-text-on-light: var(--vt-c-black);
 
   --section-gap: 160px;
 }
 
+/* Global styles  and reset*/
 *,
 *::before,
 *::after {

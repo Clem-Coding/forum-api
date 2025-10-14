@@ -1,6 +1,6 @@
 import { ref } from "vue";
-import type { User, LoginCredentials } from "../types/user";
-import { authService } from "../api/authService";
+import type { User, LoginCredentials } from "@/types/user";
+import { authService } from "@/api/authService";
 
 export const isAuthenticated = ref(!!authService.getToken());
 export const currentUser = ref<User | null>(authService.getCurrentUser());

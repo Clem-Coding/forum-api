@@ -1,6 +1,6 @@
 import { ref } from "vue";
-import { commentsService } from "../api/commentService";
-import type { Comment, CommentCreate } from "../types/comment";
+import { commentsService } from "@/api/commentService";
+import type { Comment, CommentCreate } from "@/types/comment";
 
 export function useComments() {
   const comments = ref<Comment[]>([]);
@@ -8,14 +8,19 @@ export function useComments() {
   const error = ref<string | null>(null);
 
   // Create a new comment
-  const createComment = async (data: CommentCreate) => {
+  const createComment = async (
+    data: CommentCreate
+  ): Promise<{ success: true; comment: Comment } | { success: false; errors: any }> => {
     loading.value = true;
     error.value = null;
     try {
       const newComment = await commentsService.create(data);
-      comments.value.push(newComment); // Add to the list
-      return newComment;
+      comments.value.push(newComment);
+      return { success: true, comment: newComment };
     } catch (e: any) {
+      if (e.response && (e.response.status === 400 || e.response.status === 422)) {
+        return { success: false, errors: e.response.data.violations };
+      }
       error.value = e.response?.data?.message || "Erreur lors de la création du commentaire";
       throw e;
     } finally {
@@ -40,19 +45,23 @@ export function useComments() {
   };
 
   // Update a comment
-  const updateComment = async (id: number, data: Partial<CommentCreate>) => {
+  const updateComment = async (
+    id: number,
+    data: Partial<CommentCreate>
+  ): Promise<{ success: true; comment: Comment } | { success: false; errors: any }> => {
     loading.value = true;
     error.value = null;
     try {
       const updatedComment = await commentsService.update(id, data);
-
       const index = comments.value.findIndex((c) => c.id === id);
       if (index !== -1) {
         comments.value[index] = updatedComment;
       }
-
-      return updatedComment;
+      return { success: true, comment: updatedComment };
     } catch (e: any) {
+      if (e.response && (e.response.status === 400 || e.response.status === 422)) {
+        return { success: false, errors: e.response.data.violations };
+      }
       error.value = e.response?.data?.message || "Erreur lors de la modification du commentaire";
       throw e;
     } finally {
