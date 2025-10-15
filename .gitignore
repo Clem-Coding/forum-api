@@ -1,6 +1,7 @@
 # Environment files
 .env*
 !.env.example
+!.env.test.example
 
 # IDE
 .vscode/settings.json

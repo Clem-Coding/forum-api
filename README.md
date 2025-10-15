@@ -37,7 +37,7 @@ L'API a été développée avec Symfony 7 et API Platform. Elle suit les princip
 ```bash
 cp .env.example .env
 cp backend/.env.example backend/.env
-cp backend/.env.example backend/.env
+cp backend/.env.test.example backend/.env.test
 ```
 
 3. Lancez les conteneurs :
@@ -113,8 +113,7 @@ Deux comptes sont disponibles pour tester l'application :
 - Lancer les tests unitaires et fonctionnels (backend) :
 
 ```bash
-cd backend
-php bin/phpunit --testdox
+docker compose exec app php bin/phpunit --testdox
 
 ```
 
