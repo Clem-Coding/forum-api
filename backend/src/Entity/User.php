@@ -23,17 +23,24 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 #[ApiResource(
     operations: [
-        new GetCollection(),
+        new GetCollection(security: "is_granted('ROLE_ADMIN')"),
         new Get(
             uriTemplate: '/users/me',
             provider: UserMeProvider::class,
             security: "is_granted('IS_AUTHENTICATED_FULLY')",
             output: User::class,
         ),
-        new Get(),
+        new Get(
+            security: "is_granted('USER_VIEW', object)"
+        ),
         new Post(processor: UserPasswordHasher::class),
-        new Patch(processor: UserPasswordHasher::class),
-        new Delete(),
+        new Patch(
+            processor: UserPasswordHasher::class,
+            security: "is_granted('USER_EDIT', object)"
+        ),
+        new Delete(
+            security: "is_granted('USER_DELETE', object)"
+        )
     ],
     normalizationContext: ['groups' => ['user:read']],
     denormalizationContext: ['groups' => ['user:create', 'user:update']],

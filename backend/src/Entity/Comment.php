@@ -19,7 +19,7 @@ use Symfony\Component\Validator\Constraints as Assert;
     operations: [
         new Get(),
         new GetCollection(),
-        new Post(processor: CommentPersister::class),
+        new Post(processor: CommentPersister::class, security: "is_granted('IS_AUTHENTICATED_FULLY')"),
         new Patch(
             security: "is_granted('COMMENT_EDIT', object)",
             processor: CommentPersister::class

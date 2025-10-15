@@ -1,6 +1,5 @@
-import { jwtDecode } from "jwt-decode";
 import apiClient from "./client";
-import type { LoginCredentials, LoginResponse, JwtPayload } from "../types/auth";
+import type { LoginCredentials, LoginResponse } from "../types/auth";
 import type { User } from "../types/user";
 
 export const authService = {
@@ -8,13 +7,11 @@ export const authService = {
     const response = await apiClient.post<LoginResponse>("/api/login_check", credentials);
     const { token } = response.data;
 
-    const decoded = jwtDecode<JwtPayload>(token);
-
-    const userResponse = await apiClient.get<any>("/api/users", {
-      params: { username: decoded.username },
+    const userResponse = await apiClient.get<User>("/api/users/me", {
+      headers: { Authorization: `Bearer ${token}` },
     });
 
-    const user = userResponse.data.member[0];
+    const user = userResponse.data;
 
     if (!user) throw new Error("Utilisateur non trouvé");
 

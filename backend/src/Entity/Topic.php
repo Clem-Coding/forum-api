@@ -21,7 +21,10 @@ use Symfony\Component\Validator\Constraints as Assert;
     operations: [
         new Get(),
         new GetCollection(),
-        new Post(processor: TopicPersister::class),
+        new Post(
+            processor: TopicPersister::class,
+            security: "is_granted('IS_AUTHENTICATED_FULLY')"
+        ),
         new Patch(security: "is_granted('TOPIC_EDIT', object)", processor: TopicPersister::class),
         new Delete(security: "is_granted('TOPIC_DELETE', object)")
     ],
