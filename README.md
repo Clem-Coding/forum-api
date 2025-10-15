@@ -120,8 +120,8 @@ docker compose exec app php bin/phpunit --testdox
 - Lancer les tests Vitest (frontend) :
 
 ```bash
-cd frontend
-npm run test
+docker exec -it forum_frontend npm run test
+
 ```
 
 ## Commandes utiles
