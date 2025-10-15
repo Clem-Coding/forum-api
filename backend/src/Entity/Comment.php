@@ -29,7 +29,6 @@ use Symfony\Component\Validator\Constraints as Assert;
     paginationItemsPerPage: 10,
     normalizationContext: ['groups' => ['comment:read']],
     denormalizationContext: ['groups' => ['comment:write']],
-    // order: ['createdAt' => 'ASC']
 )]
 #[ORM\Table(name: "comments")]
 #[ORM\HasLifecycleCallbacks]
@@ -47,7 +46,7 @@ class Comment
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
-    #[Groups(['topic:read'])]
+    #[Groups(['topic:read', 'comment:read'])]
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 

@@ -33,9 +33,9 @@ final class TopicFactory extends PersistentObjectFactory
     {
         return [
             'content' => self::faker()->text(),
-            'createdAt' => \DateTimeImmutable::createFromMutable(self::faker()->dateTimeBetween('-1 year', '-2 day')),
+            'createdAt' => \DateTimeImmutable::createFromMutable(self::faker()->dateTimeBetween('-1 year', '-2 months')),
             'title' => self::faker()->text(150),
-            'updatedAt' => \DateTimeImmutable::createFromMutable(self::faker()->dateTimeBetween('-1 year', '-2 day')),
+            'updatedAt' => \DateTimeImmutable::createFromMutable(self::faker()->dateTimeBetween('-1 year', '-2 months')),
             'user' => UserFactory::new(),
         ];
     }

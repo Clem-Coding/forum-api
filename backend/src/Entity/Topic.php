@@ -25,7 +25,7 @@ use Symfony\Component\Validator\Constraints as Assert;
         new Patch(security: "is_granted('TOPIC_EDIT', object)", processor: TopicPersister::class),
         new Delete(security: "is_granted('TOPIC_DELETE', object)")
     ],
-    paginationItemsPerPage: 10,
+    paginationItemsPerPage: 6,
     normalizationContext: ['groups' => ['topic:read']],
     denormalizationContext: ['groups' => ['topic:write']],
     order: ['createdAt' => 'DESC']

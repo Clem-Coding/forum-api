@@ -1,10 +1,8 @@
-version: "3.9"
-
 services:
   # Symfony / PHP backend
   app:
     build: ./backend
-    container_name: forum_app
+    container_name: forum_backend
     restart: unless-stopped
     ports:
       - "8000:8000"
@@ -18,7 +16,8 @@ services:
       - backend_var:/var/www/html/var
     depends_on:
       - db
-    command: bash -c "php -S 0.0.0.0:8000 -t public"
+      # Install assets (including API Platform) and start server
+    command: bash -c "php bin/console assets:install public --no-interaction && php -S 0.0.0.0:8000 -t public"
     environment:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
